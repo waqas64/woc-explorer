@@ -1,5 +1,5 @@
 var Decimal = require("decimal.js");
-Decimal8 = Decimal.clone({ precision:8, rounding:8 });
+Decimal6 = Decimal.clone({ precision:6, rounding:6 });
 
 var btcCurrencyUnits = [
 	{
@@ -13,17 +13,17 @@ var btcCurrencyUnits = [
 		name:"GBC",
 		multiplier:1000,
 		values:["GBC"],
-		decimalPlaces:5
+		decimalPlaces:3
 	},
 	{
 		name:"bits",
-		multiplier:1000000,
+		multiplier:10000,
 		values:["bits"],
 		decimalPlaces:2
 	},
 	{
 		name:"sat",
-		multiplier:100000000,
+		multiplier:1000000,
 		values:["sat", "satoshi"],
 		decimalPlaces:0
 	}
@@ -201,10 +201,10 @@ module.exports = {
 		}
 	},
 	blockRewardFunction:function(blockHeight) {
-		var eras = [ new Decimal8(50) ];
+		var eras = [ new Decimal6(5000) ];
 		for (var i = 1; i < 34; i++) {
 			var previous = eras[i - 1];
-			eras.push(new Decimal8(previous).dividedBy(2));
+			eras.push(new Decimal6(previous).dividedBy(2));
 		}
 
 		var index = Math.floor(blockHeight / 210000);

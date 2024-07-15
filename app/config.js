@@ -78,7 +78,7 @@ module.exports = {
 		// protocol can be "tls" or "tcp", it defaults to "tcp" if port is 50001 and "tls" otherwise
 	//	{host: "sv1.hsmiths.com", port:60004, protocol: "ssl"},
 	    //  {host: "satoshi.vision.cash", port:50002, protocol: "ssl"},
-		// {host: "electrum.qtornado.com", port:50001, protocol: "tcp"},
+		{host: "13.229.232.48", port:50001, protocol: "tcp"}
 		// {host: "electrum.coinucopia.io", port:50001, protocol: "tcp"},
 
 	],

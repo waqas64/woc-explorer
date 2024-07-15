@@ -56,7 +56,7 @@ function connectToServer(host, port, protocol) {
 		// default protocol is 'tcp' if port is 50001, which is the default unencrypted port for electrumx
 		var defaultProtocol = port === 50001 ? 'tcp' : 'tls';
 		var electrumClient = new ElectrumClient(port, host, protocol || defaultProtocol);
-		electrumClient.initElectrum({client:"btc-rpc-explorer-v1.1", version:"1.2"}).then(function(res) {
+		electrumClient.initElectrum({client:"btc-rpc-explorer-v1.1", version:"1.4"}).then(function(res) {
 			console.log("Connected to ElectrumX Server: " + host + ":" + port + ", versions: " + res);
 
 			electrumClients.push(electrumClient);
